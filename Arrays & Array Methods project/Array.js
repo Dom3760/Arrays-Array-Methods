@@ -1,9 +1,10 @@
 var food = ["hotdog","burito","hamburger","Salami","french fries"]
 var drinks = ["water","sprite","coke","pepsi","hot chocolate"]
 
-console.log(food);
+console.log(tostring());
+// console.log(food);
 push("taco");
-console.log(food);
+// console.log(food);
 
 function push(item){
     food[food.length] = item;      
@@ -11,18 +12,30 @@ function push(item){
 
 pop()
 function pop(){
-    var foodPop = [];
-    food = ["hotdog","burito","hamburger","Salami","french fries"]
-    for (i=(food.length - 2); i >= 0; i--)
-    {
-        foodPop.unshift(food[i]);
+    var newArray = [];
+    // food = ["hotdog","burito","hamburger","Salami","french fries"]
+    for(let i = 0; i < food.length-1; i++){
+        newArray[i] = food[i];
     }
-    console.log(foodPop);
+    return newArray;
+    // console.log(foodPop);
 }
 
 tostring()
 function tostring(){
-    console.log(food)
+    let string = "";
+
+    for(let i = 0; i < food.length; i++){
+        if(i == 0){
+            string = string + food[i];
+        }
+        else{
+            string = string + "," + food[i];
+
+        }
+    }
+
+    return string;
 }
 
 join()
@@ -30,52 +43,39 @@ function join()
 {
     var foodjoin = [];
     food = ["hotdog","burito","hamburger","Salami","french fries"]
-    for (i=(food.length - 2); i >= 0; i--)
+    for (let i = 0; i < food.length; i++)
     {
-        foodjoin.unshift(food[i],"/");
+        if (i == 0)
+        {
+            foodjoin = foodjoin + food[i]
+        }
+        else
+        {
+            foodjoin = foodjoin+ "/" + food[i]
+        }
     }
-    console.log(foodjoin);
-    console.log(food)
+    console.log(foodjoin)
 }
 
-concat()
-function concat()
+concatArray()
+function concatArray()
 {
-    var biglist = (food+","+drinks)
-    console.log(biglist)
+    var con = []
+    for(i=0; i < food.length; i++)
+    {
+        if (i == 0)
+        {
+            con += food[i]
+        }
+        else
+        {
+            con += "," + food[i]
+        }
+    }
+
+    for(i=0; i < drinks.length; i++)
+    {
+        con += "," + drinks[i] 
+    }
+    console.log(con)
 }
-//push//
-// numbers[food.length]=6
-// function()
-// {
-// numbers()
-// }
-//pop//
-
-//toString//
-// console.log("toString:")
-// for(i=0; i<food.length; i++)
-// {
-//     let tostr = (food[i])
-//     console.log (tostr,",")
-// }
-
-// //join//
-// console.log("Join:")
-// for(i=0; i<food.length; i++)
-// {
-//     let Join1 = (food[i])
-//     console.log (Join1,"/")
-// }
-
-// //concat//
-// console.log("Concat:")
-// for (i = 0; i < (food.length + drinks.length) ; i ++)
-// {
-//     console.log (food[i])
-// }
-
-// for (i = 0; i < (food.length + drinks.length) ; i ++)
-// {
-//     console.log (drinks [i])
-// }
