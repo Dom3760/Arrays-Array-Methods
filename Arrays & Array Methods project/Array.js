@@ -38,8 +38,8 @@ function tostring(){
     return string;
 }
 
-join()
-function join()
+join("*")
+function join(seperator)
 {
     var foodjoin = [];
     food = ["hotdog","burito","hamburger","Salami","french fries"]
@@ -51,7 +51,7 @@ function join()
         }
         else
         {
-            foodjoin = foodjoin+ "/" + food[i]
+            foodjoin = foodjoin+ seperator + food[i]
         }
     }
     console.log(foodjoin)
@@ -61,7 +61,7 @@ concatArray()
 function concatArray()
 {
     var con = []
-    for(i=0; i < food.length; i++)
+    for(let i = 0; i < food.length; i++)
     {
         if (i == 0)
         {
